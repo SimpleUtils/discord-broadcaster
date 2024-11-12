@@ -60,7 +60,7 @@ export function parseCommand(message, prefix) {
 					case 'json':
 						break;
 					default:
-						output.push('');
+						output.push('[');
 						o++;
 						finding = 'json';
 						break;

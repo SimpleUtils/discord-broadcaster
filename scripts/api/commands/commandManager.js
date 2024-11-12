@@ -36,7 +36,7 @@ class CommandManager {
     run(msg) {
         system.run(()=>{
             if(!msg.message.startsWith(this.prefix)) return;
-            let data = msg.message.trim().join(" ").replace(this.prefix, "")
+            let data = parseCommand(msg.message, this.prefix);
             let cmdName = data[0];
             let args = data.slice(1);
             let cmd = this.cmds.findFirst({name: cmdName});

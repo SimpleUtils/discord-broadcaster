@@ -6,6 +6,8 @@ let webhookURL = world.getDynamicProperty("simplediscordbroadcaster:webhookURL")
 
 commandManager.addCommand("url", {description: "Config: URL"}, ({msg,args})=>{
     world.setDynamicProperty("simplediscordbroadcaster:webhookURL", `${args.join(' ')}`)
+    webhookURL = world.getDynamicProperty("simplediscordbroadcaster:webhookURL")
+    world.sendMessage(`${webhookURL}`)
 })
 system.afterEvents.scriptEventReceive.subscribe((e) => {
     const request = new HttpRequest(`${webhookURL}`);
@@ -160,13 +162,13 @@ world.afterEvents.playerLeave.subscribe(e =>{
 world.beforeEvents.chatSend.subscribe((data) => {
     if (data.message.startsWith(commandManager.prefix)) {
         commandManager.run(data)
+        data.cancel = true;
         return;
     }
     system.run(()=> {
         if (data.message.startsWith("-")) return;
         if (data.message.startsWith("!")) return;
         
-
         const chatMsg = data.message;
     
         const request = new HttpRequest(`${webhookURL}`);
