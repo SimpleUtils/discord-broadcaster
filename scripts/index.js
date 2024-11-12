@@ -7,7 +7,7 @@ let webhookURL = world.getDynamicProperty("simplediscordbroadcaster:webhookURL")
 commandManager.addCommand("url", {description: "Config: URL"}, ({msg,args})=>{
     world.setDynamicProperty("simplediscordbroadcaster:webhookURL", `${args.join(' ')}`)
     webhookURL = world.getDynamicProperty("simplediscordbroadcaster:webhookURL")
-    world.sendMessage(`${webhookURL}`)
+    world.sendMessage(`${webhookURL}`) // Remove this
 })
 system.afterEvents.scriptEventReceive.subscribe((e) => {
     const request = new HttpRequest(`${webhookURL}`);
