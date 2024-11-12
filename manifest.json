@@ -1,0 +1,60 @@
+{
+    "format_version": 2,
+    "metadata": {
+      "authors": [
+        "fruitkitty"
+      ]
+    },
+    "header": {
+      "name": "Simple Discord Broadcaster",
+      "description": "If you see this, it's only compatible on Bedrock Dedicated Server.",
+      "min_engine_version": [
+        1,
+        21,
+        40
+      ],
+      "uuid": "107ac35f-b025-4a05-9e48-1fad76be26b6",
+      "version": [
+        1,
+        0,
+        1
+      ]
+    },
+    "modules": [
+      {
+        "type": "data",
+        "uuid": "8df3eb7d-65b9-42c2-83a3-27132b2b605f",
+        "version": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "type": "script",
+        "language": "javascript",
+        "uuid": "8b1752e4-10bc-457e-962e-610e3356ab6c",
+        "entry": "scripts/index.js",
+        "version": [
+          1,
+          0,
+          0
+        ]
+      }
+    ],
+    "dependencies": [
+      {
+        "module_name": "@minecraft/server",
+        "version": "1.16.0-beta"
+      },
+      {
+        "module_name": "@minecraft/server-net",
+        "version": "1.0.0-beta"
+      },
+      {
+        "module_name": "@minecraft/server-ui",
+        "version": "1.4.0-beta"
+      }
+    ],
+    "capabilities": ["script_eval"]
+  }
